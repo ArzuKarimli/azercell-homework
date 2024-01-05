@@ -1,0 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let radios = document.querySelectorAll('.slider-range__item input[type="radio"]');
+    for (let i = 0, length = radios.length; i < length; i++) {
+        radios[i].addEventListener("change", function () {
+            let card = this.closest('.cards-tariffs');
+            let cardTabPrev = card.querySelector('.cards-show-tabs');
+            cardTabPrev.classList.toggle('cards-show-tabs');
+            let attr = this.getAttribute('id');
+            let cardTabCurrent = card.querySelector(`[data-id=${attr}]`);
+            cardTabCurrent.classList.toggle('cards-show-tabs');
+        })
+    }
+});

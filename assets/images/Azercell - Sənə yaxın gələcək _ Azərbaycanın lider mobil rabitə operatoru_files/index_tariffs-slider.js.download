@@ -1,0 +1,23 @@
+document.addEventListener('DOMContentLoaded', function () {
+	(function () {
+		var init = false;
+
+		function swiperCard() {
+			if (window.innerWidth < 568) {
+				if (!init) {
+					init = true;
+					const sliderHolder = document.querySelector('[data-id="tariffs-slider"]');
+					const sliderConfig = {
+						slidesPerView: "auto",
+					};
+					swiper = new Swiper(sliderHolder, sliderConfig);
+				}
+			} else if (init) {
+				swiper.destroy();
+				init = false;
+			}
+		}
+		swiperCard();
+		window.addEventListener("resize", swiperCard);
+	})();
+});

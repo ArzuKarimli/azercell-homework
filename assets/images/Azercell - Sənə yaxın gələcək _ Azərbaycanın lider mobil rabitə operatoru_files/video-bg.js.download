@@ -1,0 +1,15 @@
+document.addEventListener('DOMContentLoaded', function () {
+    (function () {
+        const video = document.getElementById("myVideo");
+        const btnPlay = document.getElementById("video-play");
+        if (btnPlay) {
+            btnPlay.onclick = function () {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        }
+    })();
+});

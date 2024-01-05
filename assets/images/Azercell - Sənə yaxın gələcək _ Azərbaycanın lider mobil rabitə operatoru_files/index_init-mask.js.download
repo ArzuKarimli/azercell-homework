@@ -1,0 +1,40 @@
+document.addEventListener('DOMContentLoaded', function () {
+    //эти функции было бы круто вызывать после отправки аяксом, что бы возобновить работу масок, и тд..
+    //initMask
+    function initMask() {
+        //let year = new Date().getFullYear().toString();
+        // IMask(document.querySelector('[data-mask="cvv"]'), {
+        //     mask: '000',
+        //     placeholderChar: '*',
+        //     maxLength: 3,
+        //     lazy: false
+        // });
+        // IMask(document.querySelector('[data-mask="date"]'), {
+        //     mask: 'MM/YY',
+        //     blocks: {
+        //         MM: {
+        //             mask: IMask.MaskedRange,
+        //             from: 0,
+        //             to: 12
+        //         },
+        //         YY: {
+        //             mask: IMask.MaskedRange,
+        //             from: parseInt(year.slice(-2, 4)),
+        //             to: 99
+        //         }
+        //     },
+        //     lazy: false
+        // });
+			const cardNumber = document.querySelectorAll('[data-mask="card-number"]');
+			cardNumber.forEach( input =>  {
+				IMask(input, {
+					mask: '0000    00',
+					placeholderChar: 'X',
+					lazy: false
+				})
+			});
+
+    }
+    initMask();
+
+});

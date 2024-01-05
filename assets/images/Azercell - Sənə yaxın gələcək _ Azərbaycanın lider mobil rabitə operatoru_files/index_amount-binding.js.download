@@ -1,0 +1,20 @@
+document.addEventListener('DOMContentLoaded', function () {
+    //amountBinding
+    function initBound() {
+        let radioBtns = document.querySelectorAll('[data-radio]');
+        let input = document.querySelector('[data-id="amount"]');
+        // let amount = document.querySelector('[data-id="amount-span"]');
+
+        radioBtns.forEach(button => {
+            if (button.checked) {
+                input.value = button.value;
+            }
+            button.onclick = function () {
+                input.value = button.value;
+                // amount.innerText = button.value;
+            }
+        });
+    }
+    initBound();
+    //............................................
+});
